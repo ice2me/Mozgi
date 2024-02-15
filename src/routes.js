@@ -1,6 +1,6 @@
 import {
 	Route,
-	Routes, useLocation
+	Routes
 } from "react-router-dom"
 import Home from "./pages/Home"
 import What from "./pages/What"
@@ -10,7 +10,6 @@ import { APP_ROUTE } from "./utils/constants"
 
 
 export const RoutesLink = () => {
-	const location = useLocation()
 	return (
 		<Routes>
 			<Route
