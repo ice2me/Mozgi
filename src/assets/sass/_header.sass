@@ -1,0 +1,144 @@
+@import '_variables'
+.header
+	width: 100%
+	height: 80px
+	margin: 0 auto
+	&-desktop
+		height: inherit
+		@include centering
+		position: relative
+		&_language
+			width: max-content
+			*
+				cursor: pointer
+			&:hover
+				.header-desktop_language-block_one, .header-desktop_language-block_two
+					opacity: 1
+				.header-desktop_language-block
+					&:after
+						animation: AnimationShowLang forwards 2s
+
+			&-container
+				width: 38px
+				height: 38px
+				border-radius: 50%
+				border: 1px solid $basic-color-white-transparent
+				background-color: transparent
+				position: absolute
+				top: 20px
+				left: 20px
+				@include centering
+				&:hover
+					border: 1px solid $basic-color-yellow
+				&_image
+					width: 15px
+					height: 21px
+					margin-top: 5px
+					font-family: 'Body Grotesque'
+					font-size: 15px
+					line-height: 140%
+					letter-spacing: 0.1em
+					color: #373737
+			&-block
+				width: max-content
+				height: 38px
+				position: absolute
+				top: 20px
+				left: 55px
+				display: flex
+				align-items: center
+				&_one, &_two
+					width: 38px
+					height: 100%
+					margin: 10px
+					@include centering
+					border-radius: 50%
+					border: 1px solid $basic-color-white-transparent
+					&:hover
+						border: 1px solid $basic-color-yellow
+						color: $basic-color-white
+					&:first-child
+						margin-right: 0
+				&:after
+					content: ''
+					width: 100px
+					height: 38px
+					background-color: $basic-color-grey
+					position: absolute
+					left: 5px
+					border-radius: 10px
+					animation: AnimationHideLang forwards 2s
+					.header-desktop_language-block_one, .header-desktop_language-block_two
+						display: none
+		&_wrapper
+			position: relative
+			z-index: 6
+		&_burger
+			width: 25px
+			height: 25px
+			background-color: transparent
+			position: absolute
+			right: 20px
+			top: 20px
+			&:after, &:before
+				content: ''
+				width: 22px
+				height: 2px
+				background-color: $basic-color-text
+				position: absolute
+				left: 2px
+				top: 9px
+			&:before
+				left: 2px
+				top: 16px
+			&-container
+				width: auto
+				position: absolute
+				right: -100px
+				bottom: -60px
+				z-index: 6
+				animation: AnimationHideBurger forwards 2s
+			&-item
+				height: 25px
+				display: flex
+				margin-bottom: 5px
+				align-items: center
+				&_link
+					color: $basic-color-text
+
+.active-burg
+	animation: AnimationShowBurger forwards 2s
+@keyframes AnimationShowBurger
+	0%
+		right: -100px
+	100%
+		right: 20px
+@keyframes AnimationHideBurger
+	0%
+		right: 20px
+	100%
+		right: -100px
+
+@keyframes AnimationShowLang
+	0%
+		left: 5px
+		opacity: 1
+		display: block
+	100%
+		left: 105px
+		opacity: 0
+		display: none
+
+@keyframes AnimationHideLang
+	0%
+		left: 105px
+		opacity: 0
+
+	100%
+		left: 5px
+		opacity: 1
+
+.main-stop
+	stop-color: rgba(255,255,255,0.1)
+.alt-stop
+	stop-color: rgba(0,0,0,1)

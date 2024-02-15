@@ -1,0 +1,139 @@
+@import '_variables'
+
+.home
+	width: 100%
+	height: 100%
+	@include centering
+	position: relative
+	overflow: hidden
+	a
+		color: $basic-color-text
+		font-weight: 600
+		font-size: 16px
+		line-height: 22.4px
+		position: relative
+		text-decoration: none
+		background-image: linear-gradient(currentColor, currentColor)
+		background-position: 0% 100%
+		background-repeat: no-repeat
+		background-size: 0% 2px
+		transition: background-size .3s
+		&:hover
+			color: $basic-color-white
+			background-size: 100% 2px
+	&-left
+		transform: rotate(-90deg)
+		position: absolute
+		left: -30px
+		z-index: 5
+		@media screen and (max-width: 768px)
+			display: none
+		&_link
+			padding: 10px 20px
+	&-center
+		max-width: 1024px
+		width: 100%
+		height: inherit
+		@include centering
+		position: relative
+		&_name
+			font-weight: 700
+			@include calc('font-size', 82, 40)
+			line-height: 90px
+			color: $basic-color-text
+			text-align: center
+			position: relative
+			z-index: 3
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			@include calc('max-width', 578, 370)
+			width: 100%
+			@include calc('max-height', 578, 370)
+			height: 100%
+			background-color: $basic-color-yellow
+			border-radius: 50%
+			filter: blur(38px)
+			z-index: 1
+		&_circular
+			position: absolute
+			bottom: 20%
+			right: 25%
+			&-img
+				position: relative
+				z-index: 2
+				&:hover
+					animation: linear infinite RotationCircular 3s
+			&:before
+				content: ''
+				width: 8px
+				height: 8px
+				background-color: $basic-color-text
+				border-radius: 50%
+				position: absolute
+				top: 50%
+				left: 50%
+				z-index: 2
+				transform: translate(-50%, -50%)
+	&-bottom
+		position: absolute
+		bottom: 20px
+		z-index: 5
+		@media screen and (max-width: 768px)
+			display: none
+		&_link
+			padding: 10px 20px
+	&-right
+		position: absolute
+		z-index: 5
+		transform: rotate(90deg)
+		right: 0
+		@media screen and (max-width: 768px)
+			display: none
+		&_link
+			padding: 10px 20px
+
+	&-bg
+		position: relative
+		@include calc('top', 300, 250)
+		&_wrapper
+			&:first-child
+				transform: rotate(-30deg)
+				@media screen and (max-width: 468px)
+					transform: rotate(-50deg)
+			&:last-child
+				transform: rotate(150deg)
+				@media screen and (max-width: 468px)
+					transform: rotate(130deg)
+		&_first, &_second
+			position: absolute
+			font-family: 'Grtsk Giga'
+			white-space: nowrap
+			font-style: italic
+			font-weight: 700
+			font-size: 52px
+			line-height: 110%
+			text-align: center
+			text-transform: uppercase
+			opacity: 0.1
+			-webkit-text-stroke-color: #373737
+			-webkit-text-stroke-width: 1px
+			animation: animMarquee 15s linear infinite
+
+@keyframes animMarquee
+	0%
+		transform: translate(0, 0)
+	50%
+		transform: translate(-100%, 0)
+	100%
+		transform: translate(0, 0)
+
+
+
+
+@keyframes RotationCircular
+	from
+		transform: rotate(360deg)

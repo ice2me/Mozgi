@@ -1,19 +1,11 @@
 @import '_app'
-@import '_header-desktop'
-@import '_header-mob'
+@import '_header'
 @import '_home'
-@import '_profile'
-@import '_login'
-@import '_registrationShop'
-@import '_modalCard'
-@import '_editProfile'
-@import '_productList'
-@import '_category'
-@import '_navbar'
-@import '_qrCode'
 @import '_variables'
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap')
+@font-face
+  font-family: "GrtskGiga"
+  src: url('../font/GrtskGiga-Bold.woff2') format('woff2')
 
 *
   padding: 0
@@ -43,16 +35,16 @@ html, body
   width: 100%
   line-height: 1
   font-size: 14px
-  font-family: $font-fontDefault-family
   margin: 0 auto
   outline: none
   scroll-behavior: smooth !important
   overflow: hidden
-  background: $white
+  background: $basic-color-grey
   display: flex
   align-items: center
   justify-content: center
-  color: $basic-color-text
+  color: #111
+  font-family: GrtskGiga
 
 input::-ms-clear
   display: none
@@ -125,7 +117,7 @@ html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-we
   width: 6px
 
 html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb
-  background: $basic-color-text
+  background: #111
   border-radius: 6px
   width: 6px
 
@@ -134,46 +126,3 @@ html:not(.touch-screen)::-webkit-scrollbar, html:not(.touch-screen) *::-webkit-s
   border-radius: 6px
   height: 6px
 
-.loader-full
-  position: fixed
-  top: 0
-  right: 0
-  left: 0
-  bottom: 0
-  z-index: 9999
-  display: flex
-  align-items: center
-  justify-content: center
-
-.loader-wrapperForProduct
-  width: 250px
-  min-width: 250px
-  height: 350px
-  border-radius: 6px
-  box-shadow: $box-shadow
-  margin: 8px
-  padding: 5px 0
-  display: flex
-  align-items: center
-  justify-content: center
-  background-color: $basic-color-opacity
-
-.small-loader
-  width: 10px
-  height: 10px
-  margin: 8px
-  padding: 5px 0
-  display: flex
-  align-items: center
-  justify-content: center
-  position: absolute
-  right: 30%
-
-  div
-    width: 40px
-    height: 40px
-
-    img
-      width: 40px
-      height: 40px
-      min-height: 40px
